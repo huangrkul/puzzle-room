@@ -1,8 +1,12 @@
-.a {
-  fill: #222;
-  transition: all 300ms ease;
+$title-font: 'Righteous', cursive;
+$base-font: 'Roboto', sans-serif;
+
+@import './clue-one.scss'; 
+
+.hide {
+  opacity: 0;
 }
 
-.a:hover {
-  fill: red;
+.title-font {
+  font-family: $title-font;
 }

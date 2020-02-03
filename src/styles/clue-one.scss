@@ -1,0 +1,60 @@
+ .clue-numbers-svg {
+   width: 20vw;
+   height: 20vw;
+   stroke: #999;
+   stroke-width: 0.5;
+   font-size: 5vw;
+   transition: all 600ms ease;
+ }
+
+ .clue-numbers-svg:hover {
+   stroke: #111;
+   stroke-width: 1;
+ }
+
+.clue-numbers-outline {
+  fill: transparent;
+  stroke-dasharray: 100;
+  animation: clue-numbers-outline 3000ms linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes clue-numbers-outline {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.clue-numbers-svg .num {
+  fill: transparent;
+  opacity: 0;
+  transition: all 2500ms ease-in-out;
+  stroke-dasharray: 200%;
+  stroke-dashoffset: 200%;
+  cursor: pointer;
+}
+
+.clue-numbers-svg .num:hover {
+  opacity: 1;
+  stroke-dashoffset: 0%;
+  // fill: #777;
+}
+
+.clue-numbers-svg .pos1 {
+  transform: translate(28%, 40%);
+}
+
+.clue-numbers-svg .pos2 {
+  transform: translate(60%, 50%);
+}
+
+.clue-numbers-svg .pos3 {
+  transform: translate(22%, 75%);
+}
+
+.clue-numbers-svg .pos4 {
+  transform: translate(55%, 85%);
+}
