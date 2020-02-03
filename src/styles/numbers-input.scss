@@ -1,0 +1,42 @@
+.numbers-input-container ul {
+  width: 15vw;
+  text-align: center;
+  display: flex;
+  font-family: $title-font;
+  font-size: 5vw;
+  overflow: hidden;
+}
+
+.numbers-input-container ul li{
+  cursor: pointer;
+  flex: 0 0 25%;
+}
+
+.input-number-exit {
+  animation: input-number-exit 150ms ease-in;
+  animation-fill-mode: forwards;
+ }
+ 
+ @keyframes input-number-exit {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+ }
+
+
+.input-number-enter {
+  animation: input-number-enter 150ms ease-out;
+  animation-fill-mode: forwards;
+ }
+ 
+ @keyframes input-number-enter {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+ }

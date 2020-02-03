@@ -2,6 +2,10 @@ import React, {createContext, useReducer} from 'react';
 
 const initialState = {
   clueOneCode: [],
+  inputNum1: 0,
+  inputNum2: 0,
+  inputNum3: 0,
+  inputNum4: 0
 };
 
 const store = createContext(initialState);
@@ -12,6 +16,14 @@ const StateProvider = ( { children } ) => {
     switch(action.type) {
       case 'clueOne':
         return {...state, clueOneCode: action.payload};
+      case 'inputNum1':
+        return {...state, inputNum1: action.payload};
+      case 'inputNum2':
+        return {...state, inputNum2: action.payload};
+      case 'inputNum3':
+        return {...state, inputNum3: action.payload};
+      case 'inputNum4':
+        return {...state, inputNum4: action.payload};
       default:
         throw new Error();
     };

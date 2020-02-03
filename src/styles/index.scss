@@ -1,7 +1,19 @@
 $title-font: 'Righteous', cursive;
 $base-font: 'Roboto', sans-serif;
 
-@import './clue-one.scss'; 
+@import './numbers-clue.scss';
+@import './numbers-input.scss'; 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
 
 .hide {
   opacity: 0;

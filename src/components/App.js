@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import ClueNumbers from './ClueNumbers';
+import NumbersClue from './NumbersClue';
+import NumbersInput from './NumbersInput';
 import { store } from './store.js';
 
 const App = () => {
@@ -25,7 +26,8 @@ const App = () => {
     <div>
       <header></header>
       <main>
-        <ClueNumbers />
+        <NumbersClue />
+        <NumbersInput />
       </main>
       <footer></footer>
     </div>
