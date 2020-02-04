@@ -1,0 +1,115 @@
+.memory-container {
+  position: relative;
+  width: 55%;
+  top: -30vw;
+  transition: all 600ms ease;
+}
+
+.memory-svg {
+  margin-left: 10%;
+}
+
+.memory-svg polyline {
+  fill: transparent;
+  stroke-width: 1;
+  stroke: #111;
+  stroke-dasharray: 150%;
+  stroke-dashoffset: 150%;
+  transition: all 500ms ease;
+}
+
+.memory-svg polyline:nth-of-type(4),
+.memory-svg polyline:nth-of-type(5),
+.memory-svg polyline:nth-of-type(6) {
+  stroke-dasharray: 40%;
+  stroke-dashoffset: 40%;
+  opacity: 0;
+}
+
+.memory-svg polyline:first-of-type {
+  stroke: $site-black;
+}
+
+.memory-svg polyline:nth-of-type(2) {
+  stroke: $site-red;
+}
+
+.memory-svg polyline:nth-of-type(3) {
+  stroke: $site-green;
+}
+
+.polyline-wrong {
+  stroke-width: 2;
+  stroke: red;
+}
+
+.memory-polyline-animate {
+  animation: memory-polyline-animate 1500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes memory-polyline-animate {
+  0%{
+    stroke-dashoffset: 150%;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}
+
+.memory-polyline-animate-infinite {
+  animation: memory-polyline-animate-infinite 5000ms linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes memory-polyline-animate-infinite {
+  0%{
+    opacity: 0;
+    stroke-dashoffset: 40%;
+  }
+  50% {
+    opacity: 0.2;
+    stroke-dashoffset: 0%
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: -40%;
+  }
+}
+
+.memory-svg polygon {
+  stroke-width: 1;
+  fill: transparent;
+  fill-opacity: 0.3;
+  stroke-dasharray: 60%;
+  stroke-dashoffset: 60%;
+  transition: fill 600ms ease;
+  cursor: pointer;
+}
+
+.memory-svg polygon:nth-child(3n+1) {
+  stroke: $site-black;
+}
+
+.memory-svg polygon:nth-child(3n+2) {
+  stroke: $site-red;
+}
+
+.memory-svg polygon:nth-child(3n+3) {
+  stroke: $site-green;
+}
+
+
+.memory-polygon-animate {
+  animation: memory-polygon-animate 800ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes memory-polygon-animate {
+  0% {
+    stroke-dashoffset: 60%;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}

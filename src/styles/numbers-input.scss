@@ -1,7 +1,7 @@
 .numbers-input-container {
   position: relative;
   top: -30vw;
-  width: 20vw;
+  width: 24%;
   transition: all 500ms ease-out;
 }
 
@@ -23,6 +23,7 @@
 .numbers-input-container ul li{
   cursor: pointer;
   flex: 0 0 20%;
+  padding-right: 1vw;
 }
 
 .input-number-exit {

@@ -15,8 +15,8 @@ const DidYouKnow = () => {
     setAni('.did-you-know-svg text:nth-child(2)', 300, 'title-pos2');
     setAni('.did-you-know-svg text:nth-child(1)', 400, 'title-pos3');
     setAni('.did-you-know-svg .title-subhead', 1600, 'title-subhead-animate');
-    setAni('.did-you-know-svg polyline:nth-of-type(3)', 1600, 'polyline-animate-infinite');
-    setAni('.did-you-know-svg polyline:last-of-type', 2000, 'polyline-animate-infinite');
+    setAni('.did-you-know-svg polyline:nth-of-type(3)', 2000, 'polyline-animate-infinite');
+    setAni('.did-you-know-svg polyline:last-of-type', 1600, 'polyline-animate-infinite');
   }
 
   const handleO = () => {

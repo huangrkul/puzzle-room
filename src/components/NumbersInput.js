@@ -15,6 +15,7 @@ const NumbersInput = () => {
     if(check === answer){
       clearTimeout(timer);
       document.querySelector('.numbers-input-container ul').style.color = '#ddd';
+      dispatch({type: 'initMemory', payload: true});
     }
   }
 
@@ -42,7 +43,7 @@ const NumbersInput = () => {
         current = state.inputNum4;
         break;
     }
-    let next = current === 9 ? 0 : current + 1;
+    let next = current === 4 ? 0 : current + 1;
 
     if(target.classList.contains('input-number-enter')){
       target.classList.remove('input-number-enter');

@@ -9,7 +9,7 @@ $base-font: 'Roboto', sans-serif;
 @import './did-you-know';
 @import './numbers-clue.scss';
 @import './numbers-input.scss'; 
-@import './guess-cups.scss';
+@import './memory-game.scss';
 
 * {
   margin: 0;
@@ -32,4 +32,8 @@ ul {
 
 .title-font {
   font-family: $title-font;
+}
+
+.vis-none {
+  visibility: hidden;
 }

@@ -2,11 +2,13 @@ import React, {createContext, useReducer} from 'react';
 
 const initialState = {
   clueOneCode: [],
+  memoryCode: [],
   renderCode: false,
   inputNum1: 0,
   inputNum2: 0,
   inputNum3: 0,
-  inputNum4: 0
+  inputNum4: 0,
+  initMemory: false
 };
 
 const store = createContext(initialState);
@@ -17,6 +19,8 @@ const StateProvider = ( { children } ) => {
     switch(action.type) {
       case 'clueOne':
         return {...state, clueOneCode: action.payload};
+      case 'memoryCode':
+        return {...state, memoryCode: action.payload};
       case 'renderCode':
         return {...state, renderCode: action.payload};
       case 'inputNum1':
@@ -27,6 +31,8 @@ const StateProvider = ( { children } ) => {
         return {...state, inputNum3: action.payload};
       case 'inputNum4':
         return {...state, inputNum4: action.payload};
+      case 'initMemory':
+        return {...state, initMemory: action.payload};
       default:
         throw new Error();
     };

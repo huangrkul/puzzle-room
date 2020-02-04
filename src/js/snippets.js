@@ -1,14 +1,17 @@
-export function setAni(el, time, classname, action) {
+export function setAni(el, time, attr, action) {
   setTimeout(function(){
     switch(action) {
       case 'remove':
-        document.querySelector(el).classList.remove(classname);
+        document.querySelector(el).classList.remove(attr);
         break;
       case 'clear':
         document.querySelector(el).className='';
         break;
+      case 'fill':
+        document.querySelector(el).style.fill=attr;
+        break;
       default:
-        document.querySelector(el).classList.add(classname);
+        document.querySelector(el).classList.add(attr);
     }
   },time);
 }
