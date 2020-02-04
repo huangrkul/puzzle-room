@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
+import DidYouKnow from './DidYouKnow';
 import NumbersClue from './NumbersClue';
 import NumbersInput from './NumbersInput';
+import GuessCups from './GuessCups';
 import { store } from './store.js';
 
 const App = () => {
@@ -19,6 +21,9 @@ const App = () => {
   }
 
   useEffect(() => {
+  }, [globalState.state.renderCode])
+
+  useEffect(() => {
     generateClueOne();
   }, [])
 
@@ -26,8 +31,10 @@ const App = () => {
     <div>
       <header></header>
       <main>
+        <DidYouKnow />
         <NumbersClue />
         <NumbersInput />
+        <GuessCups />
       </main>
       <footer></footer>
     </div>

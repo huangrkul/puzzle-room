@@ -1,14 +1,20 @@
+.clue-numbers {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .clue-numbers-svg {
-  width: 20vw;
-  height: 20vw;
-  stroke: #999;
+  width: 40%;
+  height: 40%;
+  stroke: $site-green;
   stroke-width: 0.5;
-  font-size: 5vw;
+  font-size: 600%;
   transition: all 600ms ease;
 }
 
 .clue-numbers-svg:hover {
-  stroke: #111;
+  stroke: #666;
   stroke-width: 1;
 }
 
@@ -31,16 +37,16 @@
 .clue-numbers-svg .num {
  fill: transparent;
  opacity: 0;
- transition: all 2500ms ease-in-out;
- stroke-dasharray: 200%;
- stroke-dashoffset: 200%;
+ transition: all 2000ms ease-in-out;
+ stroke-dasharray: 120%;
+ stroke-dashoffset: 120%;
  cursor: pointer;
 }
 
 .clue-numbers-svg .num:hover {
  opacity: 1;
  stroke-dashoffset: 0%;
- // fill: #777;
+ stroke: $site-green;
 }
 
 .clue-numbers-svg .pos1 {

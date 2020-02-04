@@ -1,0 +1,164 @@
+.did-you-know-svg {
+  margin-top: 4vw;
+  width: 100%;
+  transition: opacity 600ms ease-out;
+}
+
+.did-you-know-svg .title {
+  font-size: 218%;
+}
+
+.did-you-know-svg .title-pos {
+  stroke: $site-white;
+  fill: $site-white;
+  transform: translate(1.2%, 21%); 
+}
+
+.did-you-know-svg .title-o {
+  stroke: $site-white;
+  fill: $site-white;
+  transform: translate(11.2%, 21%);
+  transition: stroke-width 300ms ease;
+  cursor: pointer;
+}
+
+.did-you-know-svg .title-o:hover {
+  stroke-width: 3;
+}
+
+.title-o-animate {
+  animation: title-o-animate 2000ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes title-o-animate {
+  0% {
+    transform: translate(11.2%, 21%);
+  }
+  49% {
+    transform: translate(11.2%, 80%);
+
+  }
+  50% {
+    transform: translate(11.2%, 80%);
+  }
+  100% {
+    transform: translate(-50%, 80%);
+  }
+}
+
+.title-pos2 {
+  animation: title-pos2 600ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes title-pos2 {
+  0% {
+    stroke: $site-white;
+    fill: $site-white;
+    transform: translate(1.2%, 21%); 
+  }
+  100% {
+    stroke: $site-red;
+    fill: $site-red;
+    transform: translate(2%, 21%); 
+  }
+}
+
+.title-pos3 {
+  animation: title-pos3 600ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes title-pos3 {
+  0% {
+    stroke: $site-white;
+    fill: $site-white;
+    transform: translate(1.2%, 21%); 
+  }
+  100% {
+    stroke: $site-green;
+    fill: $site-green;
+    transform: translate(2.7%, 21%); 
+  }
+}
+
+.did-you-know-svg .title-subhead {
+  fill: transparent;
+  font-size: 76%;
+  transform: translate(40.8%, 150%);
+  overflow: hidden;
+}
+
+.title-subhead-animate {
+  animation: title-subhead-animate 800ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes title-subhead-animate {
+  0% {
+    fill: transparent;
+    transform: translate(40.8%, 92%);
+  }
+  100% {
+    fill: $site-white;
+    transform: translate(40.8%, 88%);
+  }
+}
+
+.did-you-know-svg polyline{
+  fill: transparent;
+  stroke-width: 1;
+  stroke-dasharray:  100%;
+  stroke-dashoffset: 100%;
+}
+
+.did-you-know-svg polyline:first-of-type {
+  stroke: $site-red;
+}
+
+.did-you-know-svg polyline:nth-of-type(2) {
+  stroke: $site-green;
+}
+
+.polyline-animate {
+  animation: polyline-animate 2000ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes polyline-animate {
+  0% {
+    stroke-dashoffset: 100%;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}
+
+.did-you-know-svg polyline:nth-of-type(3), .did-you-know-svg polyline:last-of-type {
+  opacity: 0;
+  stroke-dasharray:  20%;
+  stroke-dashoffset: 100%;
+  stroke: $site-white;
+}
+
+.polyline-animate-infinite {
+  animation: polyline-animate-infinite 5000ms linear;
+  animation-iteration-count: infinite;
+  animation-delay: 2000ms;
+}
+
+@keyframes polyline-animate-infinite {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 100%;
+  }
+  50% {
+    opacity: 0.2;
+    stroke-dashoffset: 50%;
+  }
+  100%{
+    opacity: 0;
+    stroke-dashoffset: 0%;
+  }
+}

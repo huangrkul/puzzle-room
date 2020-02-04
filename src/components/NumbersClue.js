@@ -9,7 +9,7 @@ const NumbersClue = () => {
   })
 
   return (
-    <section>
+    <section className="clue-numbers">
       <svg className="clue-numbers-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301 301">
         <path className="clue-numbers-outline" d="M222.11,25l72.12,125L222.11,275H77.89L5.77,150,77.89,25H222.11M225,20H75L0,150,75,280H225l75-130L225,20Z"/>
         <text className="title-font num pos1">{globalState.state.clueOneCode[0]}</text>

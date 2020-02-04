@@ -1,15 +1,28 @@
+.numbers-input-container {
+  position: relative;
+  top: -30vw;
+  width: 20vw;
+  transition: all 500ms ease-out;
+}
+
+.numbers-input-hide {
+  transform: translateX(-100%);
+}
+
 .numbers-input-container ul {
-  width: 15vw;
+  background-color: $site-red;
   text-align: center;
   display: flex;
   font-family: $title-font;
   font-size: 5vw;
+  color: $site-black;
   overflow: hidden;
+  transition: color 1000ms ease;
 }
 
 .numbers-input-container ul li{
   cursor: pointer;
-  flex: 0 0 25%;
+  flex: 0 0 20%;
 }
 
 .input-number-exit {

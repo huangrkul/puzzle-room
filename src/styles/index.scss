@@ -1,13 +1,24 @@
+$site-white:  #dddddd;
+$site-green:  #375757;
+$site-red:    #573A37;
+$site-blue:   #2b3445;
+$site-black:  #222222;
 $title-font: 'Righteous', cursive;
 $base-font: 'Roboto', sans-serif;
 
+@import './did-you-know';
 @import './numbers-clue.scss';
 @import './numbers-input.scss'; 
+@import './guess-cups.scss';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: $site-blue;
 }
 
 ul {

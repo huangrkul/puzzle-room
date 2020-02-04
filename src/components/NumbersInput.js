@@ -13,7 +13,8 @@ const NumbersInput = () => {
     const check = `${state.inputNum1}${state.inputNum2}${state.inputNum3}${state.inputNum4}`;
     const answer = `${state.clueOneCode[0]}${state.clueOneCode[1]}${state.clueOneCode[2]}${state.clueOneCode[3]}`;
     if(check === answer){
-      console.log('yay');
+      clearTimeout(timer);
+      document.querySelector('.numbers-input-container ul').style.color = '#ddd';
     }
   }
 
@@ -58,11 +59,15 @@ const NumbersInput = () => {
 
   useEffect(() => {
     checkCode();
+    return(() => {
+      clearTimeout(timer);
+    })
   },[state.inputNum1, state.inputNum2, state.inputNum3, state.inputNum4])
 
   return (
-    <section className="numbers-input-container">
+    <section className={`numbers-input-container ${globalState.state.renderCode ? '' : 'numbers-input-hide'}`}>
       <ul>
+        <li></li>
         <li id="num1" onClick={nextNum}>{globalState.state.inputNum1}</li>
         <li id="num2" onClick={nextNum}>{globalState.state.inputNum2}</li>
         <li id="num3" onClick={nextNum}>{globalState.state.inputNum3}</li>
