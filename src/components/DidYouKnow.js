@@ -31,7 +31,7 @@ const DidYouKnow = () => {
   },[])
 
   return (
-    <section>
+    <section className="did-you-know">
       <svg className="did-you-know-svg hide" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 870 135">
         <text className="title-font title title-pos">DID YOU KNOW</text>
         <text className="title-font title title-pos">DID YOU KNOW</text>

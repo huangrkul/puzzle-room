@@ -10,6 +10,7 @@ $base-font: 'Roboto', sans-serif;
 @import './numbers-clue.scss';
 @import './numbers-input.scss'; 
 @import './memory-game.scss';
+@import './win.scss';
 
 * {
   margin: 0;
@@ -36,4 +37,8 @@ ul {
 
 .vis-none {
   visibility: hidden;
+}
+
+.dis-none {
+  display: none;
 }

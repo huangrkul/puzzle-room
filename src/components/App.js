@@ -3,6 +3,7 @@ import DidYouKnow from './DidYouKnow';
 import NumbersClue from './NumbersClue';
 import NumbersInput from './NumbersInput';
 import MemoryGame from './MemoryGame';
+import Win from './Win';
 import { store } from './store.js';
 
 const App = () => {
@@ -16,7 +17,6 @@ const App = () => {
       let randNum = Math.floor(Math.random() * 5);
       clueOne.push(randNum);
     }
-    console.log(clueOne);
     dispatch({type: 'clueOne', payload: clueOne });
   }
 
@@ -35,12 +35,13 @@ const App = () => {
 
   return (
     <div>
-      <header></header>
+      <header className="dis-none"><h1>SVG Puzzle - William Huang</h1></header>
       <main>
         <DidYouKnow />
         <NumbersClue />
         <NumbersInput />
         <MemoryGame />
+        <Win />
       </main>
       <footer></footer>
     </div>

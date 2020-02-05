@@ -8,7 +8,9 @@ const initialState = {
   inputNum2: 0,
   inputNum3: 0,
   inputNum4: 0,
-  initMemory: false
+  initMemory: false,
+  initWin: false,
+  finalCode: '',
 };
 
 const store = createContext(initialState);
@@ -33,6 +35,10 @@ const StateProvider = ( { children } ) => {
         return {...state, inputNum4: action.payload};
       case 'initMemory':
         return {...state, initMemory: action.payload};
+      case 'initWin':
+        return {...state, initWin: action.payload};
+      case 'finalCode':
+        return {...state, finalCode: action.payload};
       default:
         throw new Error();
     };

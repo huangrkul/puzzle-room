@@ -1,0 +1,121 @@
+.win {
+  position: relative;
+  margin: 6vw auto;
+  width: 80%;
+}
+
+.win-svg {
+  font-family: $title-font;
+}
+
+.win-svg polygon {
+  fill: transparent;
+  stroke-width: 2;
+  transform-origin:(17% 48%);
+  stroke-dasharray: 150%;
+  stroke-dashoffset: 150%;
+  opacity: 0;
+}
+
+.win-svg polygon:nth-of-type(1){
+  stroke: $site-red;
+}
+
+.win-svg polygon:nth-of-type(2){
+  stroke: $site-green;
+}
+
+.win-svg polygon:nth-of-type(3){
+  stroke: #aaa;
+}
+
+.win-polygon-animate {
+  animation: win-polygon-animate 1500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes win-polygon-animate {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+    stroke-dashoffset: 150%;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    stroke-dashoffset: 0%;
+  }
+}
+
+.win-svg .win-text {
+  font-size: 170%;
+  stroke-width: 1;
+  stroke: $site-white;
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  transform: translate(7.5%, 55%);
+  fill: transparent;
+}
+
+.win-text-animate {
+  animation: win-text-animate 2000ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes win-text-animate {
+  0% {
+    stroke-dashoffset: 100%;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+    fill: $site-black;
+  }
+}
+
+.win-svg line {
+  stroke-width: 2;
+  stroke: $site-red;
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+}
+
+.win-line-animate {
+  animation: win-line-animate 1000ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes win-line-animate {
+  0% {
+    stroke-dashoffset: 100%;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}
+
+.win-svg .win-total {
+  font-family: $base-font;
+  font-size: 70%;
+  transform: translate(43%, 53%);
+  opacity: 0;
+}
+
+.win-total-enter {
+  animation: win-total-enter 600ms ease-out;
+  animation-fill-mode: forwards;;
+}
+
+@keyframes win-total-enter {
+  0% {
+    opacity: 0;
+    transform: translate(40%, 53%);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(43%, 53%);
+  }
+}

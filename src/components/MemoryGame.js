@@ -5,6 +5,7 @@ import { setAni } from '../js/snippets.js';
 const MemoryGame = () => {
 
   const globalState = useContext(store);
+  const { dispatch } = globalState;
   let intTimer;
   const plates = document.querySelectorAll('.plate');
   const sequence = globalState.state.memoryCode;
@@ -15,7 +16,6 @@ const MemoryGame = () => {
   const initSequence = () => {
     if(globalState.state.initMemory) {
       isIgnored = true;
-      console.log(sequence);
       setAni('.memory-container',0,'vis-none','remove');
       setAni('.memory-svg polyline:first-of-type',0,'memory-polyline-animate');
       setAni('.memory-svg polyline:nth-of-type(2)',150,'memory-polyline-animate');
@@ -64,13 +64,35 @@ const MemoryGame = () => {
         userCorrect++;
       } else {
         isIgnored = true;
+        intTimer = setTimeout(() => {
+          clearTimeout(intTimer);
+          dispatch({type: 'initWin', payload: true});
+        }, 1000)
       }
       
     } else if(event.target.id !== sequence[userCorrect].toString() && !isIgnored) {
-      if(wrongs < 4) {
+      if(wrongs <= 3) {
         document.querySelector(`.memory-svg polyline:nth-of-type(${wrongs})`).style.opacity = 0;
+        wrongs++;
+      } else {
+        resetGame();
       }
-      wrongs++;
+    }
+  }
+
+  const resetGame = () => {
+    if(!isIgnored) {
+      isIgnored = true;
+      plates.forEach(plate => {
+        plate.classList.remove('memory-polygon-animate');
+        plate.style.fill = "transparent";
+      })
+      userCorrect = 0;
+      wrongs = 1;
+      document.querySelector('.memory-svg polyline:nth-of-type(1)').style.opacity = 1;
+      document.querySelector('.memory-svg polyline:nth-of-type(2)').style.opacity = 1;
+      document.querySelector('.memory-svg polyline:nth-of-type(3)').style.opacity = 1;
+      plateSequence();
     }
   }
 
@@ -87,7 +109,7 @@ const MemoryGame = () => {
         <polyline className="" points="39.99 0 39.99 44.5 383.99 44.5 383.99 110"/>
         <polyline className="" points="49.99 0 49.99 33.5 393.99 33.5 393.99 110"/>
         <polyline className="" points="61.99 0 61.99 22.5 405.99 22.5 405.99 110"/>
-        <polygon className="" points="409.94 110.5 377.03 110.5 360.58 139 377.03 167.5 409.94 167.5 426.39 139 409.94 110.5"/>
+        <polygon onClick={resetGame} className="" points="409.94 110.5 377.03 110.5 360.58 139 377.03 167.5 409.94 167.5 426.39 139 409.94 110.5"/>
         <polygon id="0" onClick={handlePlate} className="plate" points="409.94 178.5 377.03 178.5 360.58 207 377.03 235.5 409.94 235.5 426.39 207 409.94 178.5"/>
         <polygon id="1" onClick={handlePlate} className="plate" points="349.94 144.5 317.03 144.5 300.58 173 317.03 201.5 349.94 201.5 366.39 173 349.94 144.5"/>
         <polygon id="2" onClick={handlePlate} className="plate" points="289.94 110.5 257.03 110.5 240.58 139 257.03 167.5 289.94 167.5 306.39 139 289.94 110.5"/>
